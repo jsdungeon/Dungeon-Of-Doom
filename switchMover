@@ -1,0 +1,135 @@
+#include <stdio.h>
+
+main()
+{
+     //int  Grade = 'A';
+     const int MAX_LEN = 80;
+     char direction;
+     char exitCondition[4];
+     char playerInRoomNumber;
+     char location[7];
+     char wentTo[10];
+
+     int room0[] = { 0, 0, 1, 0, 0, 0, 0, 0, 0 };
+     int room1[] = { 1, 0, 0, 1, 1, 0, 0, 0, 0 };
+     int room2[] = { 2, 0, 0, 1, 0, 0, 0, 0, 0 };
+     int room3[] = { 3, 1, 1, 1, 0, 0, 0, 0, 0 };
+     int room4[] = { 4, 1, 1, 1, 1, 0, 0, 0, 0 };
+     int room5[] = { 5, 0, 0, 1, 1, 0, 0, 0, 0 };
+     int room6[] = { 6, 1, 1, 0, 0, 0, 0, 0, 0 };
+     int room7[] = { 7, 0, 1, 0, 1, 0, 0, 0, 0 };
+     int room8[] = { 8, 0, 0, 0, 1, 0, 0, 0, 0 };
+
+     int i;
+	 int j = 0;
+	 int n = 0;
+     wentTo[0] = 'X';
+
+//     switch( playerInRoomNumber )
+//     {
+//     case 'room0' :
+//        location[0] = "room0";
+//     case 'room1' :
+//        location[1] = "room1";
+//     }
+    while ( wentTo[0] == 'X' ) {
+     printf("Where do you want to go? (n, e, s, w, u, d): ");
+     scanf("%c", &direction);
+     //fflush(stdout);
+     printf("\n\nYou have chosen to go %c\n\n", direction);
+     for (j = 0; j < 7; j++) {
+
+		printf("room0[%d] = %d\n", j, room0[j]);
+	}
+	printf("Above info is for debugging purpose only.\n\n");
+    printf("wentTo[0] = %c\n\n", wentTo[0]);
+     i = 0;
+
+     //for(i = 0; i < 6; i++){
+     //switch( room0[i] )
+
+
+     switch( direction )
+     {
+        case 'n' :
+
+            printf("You want to go North\n\n");
+           // if (room0[1] == 1)
+           //printf("Possible exit: %d\n\n", location[1]);
+            if (room0[1] == 1)
+                {
+                    wentTo[0] = 'N';
+                    printf("wentTo[0] = %c\n\n", wentTo[0]);
+                    printf ("You went North.\n\n");
+                    //break;
+                }
+                else{
+                break;
+                }
+
+            //printf("Sorry, it seems that you can't go this way!\n\n");
+
+        case 'e':
+            printf("You want to go East\n\n");
+            if (room0[2] == 1)
+                {
+                    wentTo[0] = 'E';
+                    printf ("You went East.\n\n");
+                    //break;
+                }
+            break;
+            //printf("Sorry, it seems that you can't go this way!\n\n");
+
+        case 's' :
+            printf("You want to go South\n\n");
+            if (room0[3] == 1)
+                {
+                    wentTo[0] = 'S';
+                    printf ("You went South.\n\n");
+                    //break;
+                }
+            break;
+            //printf("Sorry, it seems that you can't go this way!\n\n");
+
+        case 'w' :
+            printf("You want to go West\n\n");
+            if (room0[4] == 1)
+                {
+                    wentTo[0] = 'W';
+                    printf ("You went West.\n\n");
+                    //break;
+                }
+            break;
+            //printf("Sorry, it seems that you can't go this way!\n\n");
+
+        case 'u' :
+            printf("You want to go Up\n\n");
+            if (room0[5] == 1)
+                {
+                    wentTo[0] = 'U';
+                    printf ("You went Up.\n\n");
+                    //break;
+                }
+            break;
+            //printf("Sorry, it seems that you can't go this way!\n\n");
+
+        case 'd' :
+            printf("You want to go Down\n\n");
+            if (room0[6] == 1)
+                {
+                    wentTo[0] = 'D';
+                    printf ("You can go Down.\n\n");
+                    //break;
+                }
+            break;
+            //printf("Sorry, it seems that you can't go this way!\n\n");
+
+        default  : printf( "You moved into this direction: %c\n", wentTo[0] );
+     //}
+     }
+     }
+printf("wentTo[0] = %c\n\n", wentTo[0]);
+printf("END OF PROGRAM\n\n");
+printf ("Enter 'exit' to stop and leave the program: ");
+scanf ("%s", exitCondition);
+}
