@@ -113,7 +113,7 @@ playerMovement (void)
 {
   //Ask for initial player movement
   printf("You are in a darkened room.  As your eyes adjust to the darkness you decide you have to escape.\n\n");
-  printf("Your only exit is to the east\n\n");
+  printf("Your exit is to the east and south\n\n");
   printf ("What direction do you want to go in?  Please enter n,e,s,w,u,d: \n\n");
   const int MAX_LEN = 80;
   scanf ("%s", playerDirection, 1);
@@ -123,11 +123,23 @@ playerMovement (void)
       playerInRoomNumber = 1;
       printf ("You went east\n\n");
       printf ("You are in room number: %d\n\n", playerInRoomNumber);
-      printf ("Your exits are east or South\n\n");
+      printf ("Your exits are east or south\n\n");
       printf ("Pick another direction\n");
       scanf ("%s", playerDirection, 1);
 
 }
+
+else if (playerDirection[0] = "s" && playerInRoomNumber == 0)
+    {
+      playerInRoomNumber = 3;
+      printf ("You went south\n\n");
+      printf ("You are in room number: %d\n\n", playerInRoomNumber);
+      printf ("Your exits are north, south or east\n\n");
+      printf ("Pick another direction\n");
+      scanf ("%s", playerDirection, 1);
+
+}
+
 
 if (playerDirection[0] = "e" && playerInRoomNumber == 1)
     {
