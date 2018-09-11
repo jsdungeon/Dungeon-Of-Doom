@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <string.h>
+
+int main () {
+
+ //  const char str[4][100]
+ //  str[0][]= "0.E1.S3";
+
+ //  const char room0 = "0.E1.S3";
+ //  int playerInRoomNumber = 100;
+   int goNorth;
+   int goEast;
+   int goSouth;
+   int goWest;
+   char direction[0];
+
+
+ //  const comp.one str[] = "0.E1.S2.0";
+ //  const comRoom1 = "1.S3.W0.0";
+ //  const comRoom2 = "2.N0.E3.0";
+ // const comRoom3 = "3.N1.W2.0";
+   
+   const char str[] = "0.E1.S2.0"; // 0 = room number E1 = East leads to room #1 South leads to room #2 
+   char* roomOptions = "0.E1.S2.0";
+   int playerInRoomNumber = roomOptions[0] -48; //Casting variables so we have to deduct 48
+   const char north = 'N';
+   const char east = 'E';
+   const char south = 'S';
+   const char west = 'W';
+
+   char *ret0;
+   char *ret1;
+   char *ret2;
+   char *ret3;
+
+   ret0 = strchr(str, north);
+   ret1 = strchr(str, east);
+   ret2 = strchr(str, south);
+   ret3 = strchr(str, west);
+
+   printf("String found |%c| is - |%s|\n", north, ret0);
+   printf("String found |%c| is - |%s|\n", east, ret1);
+   printf("String found |%c| is - |%s|\n", south, ret2);
+   printf("String found |%c| is - |%s|\n", west, ret3);
+
+  if (ret0 != 0 )
+    {
+        printf("You can go North.\n");
+        int goNorth = 1;
+    }
+
+   if (ret1 != 0 )
+    {
+        printf("You can go East.\n");
+        int goEast = 1;
+    }
+
+    if (ret2 != 0 )
+    {
+        printf("You can go South.\n");
+        int goSouth = 1;
+    }
+
+    if (ret3 != 0 )
+    {
+        printf("You can go West.\n");
+        int goWest = 1;
+    }
+
+    printf("You are in room number %d\n", playerInRoomNumber);
+    printf("Where do you want to go? ");
+    scanf("%s", direction[0]);
+
+    if (goNorth == 1 && direction[0] == 'n')
+    {
+       playerInRoomNumber = 1;
+       printf("You are in room number %d\n", playerInRoomNumber);
+    }
+
+
+   return(0);
+}
